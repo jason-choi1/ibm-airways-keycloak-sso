@@ -1,0 +1,30 @@
+@import "./mixins.scss";
+
+.dashboard-page__banner {
+    padding-top: $spacing-05;
+    padding-bottom: $spacing-05 * 4;
+    @include dashboard-page-background;
+}
+
+.dashboard-page__heading {
+    @include carbon--type-style('productive-heading-05');
+}
+
+.dashboard-page__subheading {
+    @include carbon--type-style('productive-heading-03');
+    @include carbon--font-weight('semibold');
+}
+
+.dashboard-page__ul {
+}
+
+.dashboard-page__ul li {
+    list-style-type: square;
+}
+
+.dashboard-page__centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

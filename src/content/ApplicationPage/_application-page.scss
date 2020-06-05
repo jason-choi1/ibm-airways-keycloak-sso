@@ -1,0 +1,51 @@
+@import "./mixins.scss";
+
+.application-page__banner {
+    padding-top: $spacing-05;
+    padding-bottom: $spacing-05 * 2;
+    @include application-page-background;
+}
+
+.application-page__heading {
+    @include carbon--type-style('productive-heading-05');
+}
+
+.application-page__subheading {
+    @include carbon--type-style('productive-heading-03');
+    @include carbon--font-weight('semibold');
+}
+
+.application-page__ul {
+}
+
+.application-page__ul li {
+    list-style-type: square;
+}
+
+.application-page__form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: 1rem;
+    margin-bottom: 0px;
+    margin-left: 1rem;
+}
+
+.application-page__text-input {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    max-width: 50%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.application-page__p {
+    @include carbon--type-style('productive-heading-03');
+    margin-top: $spacing-06;
+    margin-bottom: $spacing-08;
+    
+    @include carbon--breakpoint-between((320px + 1), md) {
+        max-width: 75%;
+    }
+}

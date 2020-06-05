@@ -27,7 +27,7 @@ const LandingPage = () => {
                 <div className="bx--col-lg-16">
                     <Breadcrumb noTrailingSlash aria-label="Page navigation">
                         <BreadcrumbItem>
-                            <a href="/">Getting started</a>
+                            <a href="/application">Getting started</a>
                         </BreadcrumbItem>
                     </Breadcrumb>
                     <h1 className="landing-page__heading">
@@ -72,12 +72,12 @@ const LandingPage = () => {
                                 </div>
                             </div>
                         </Tab>
-                        <Tab {...props.tab} label="Design">
+                        <Tab {...props.tab} label="Getting started">
                             <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                                 <div className="bx--row landing-page__tab-content">
-                                    <div className="bx--col-lg-16">
-                                        Rapidly build beautiful and accessible experiences. The Carbon kit
-                                        contains all resources you need to get started.
+                                    <div className="bx--col-lg-16 landing-page__p">
+                                        Membership for IBM Airways is by invite only.<br/>
+                                        Join the exclusive club <a href="/application">here</a>.
                                     </div>
                                 </div>
                             </div>

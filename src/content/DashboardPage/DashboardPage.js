@@ -1,71 +1,72 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { InlineLoading } from "carbon-components-react";
 import Keycloak from 'keycloak-js';
 //import UserInfo from './UserInfo';
 //import Logout from './Logout';
-
+import MyFlights from "./MyFlights";
 
 class DashboardPage extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { keycloak: null, authenticated: false };
-  }
-  
-  componentDidMount() {
-      const keycloak = Keycloak('/keycloak.json');
-      keycloak.init({onLoad: 'login-required'})
-          .then(authenticated => {
-              console.log("***********Setting state after auth");
-              this.setState({ keycloak: keycloak, authenticated: authenticated });
-          },err => {
-              console.log("***********Caught error1: " + err);
-          })
-          .catch(err => {
-              console.log("***********Caught error2: " + err);
-          });
-  }
+    constructor(props) {
+        super(props);
+        console.log("constructor called");
+        this.state = {
+            keycloak: null,
+            authenticated: false,
+            name: "",
+            email: ""
+        };
+    }
     
-  render() {
-    console.log("*******************render()");
-    if(this.state.keycloak) {
-        if(this.state.authenticated) {
-            return (
-                <div>
-                    Hello
-                </div>
-            );
-        } else return (<div>Unable to authenticate!</div>);
+    componentDidMount() {
+        const keycloak = Keycloak('/keycloak.json');
+        keycloak.init({onLoad: 'login-required'})
+                .then(authenticated => {
+                    this.setState({ keycloak: keycloak, authenticated: authenticated });
+                    this.state.keycloak.loadUserInfo().then(user => {
+                        this.setState({ name: user.name, email: user.email });
+                    });
+                },err => {
+                    
+                })
+                .catch(err => {
+                    
+                });
     }
-    return (
-      <div>Redirecting to your identity provider...</div>
-    );
-  }
-};
-
-
-/*
-const DashboardPage = () => {
-    var state = { keycloak: null, authenticated: false };
-
-    const keycloak = Keycloak('/keycloak.json');
-    keycloak.init({onLoad: 'login-required'}).then(authenticated => {
-        state.keycloak = keycloak;
-        state.authenticated = authenticated;
-    })
-
-    if (state.keycloak) {
-        if(state.authenticated) {
-            return (
-                <div className="bx--grid bx--grid--full-width bx--grid--no-gutter repo-page">
-                    <div className="bx--row repo-page__r1">
-                        <div className="bx--col-lg-16">Dashboard will go here</div>
-                    </div>
-                </div>
-            )
+    
+    render() {
+        if(this.state.keycloak) {
+            if(this.state.authenticated) {
+                return (
+                    <Fragment>
+                        <div className="bx--row dashboard-page__banner">
+                            <div className="bx--col-lg-16">
+                                <h1 className="dashboard-page__heading">
+                                    Welcome back, {this.state.name}
+                                </h1>
+                            </div>
+                        </div>
+                        <br/>
+                        <div className="bx--row">
+                            <div className="bx--col-md-4 bx--col-lg-7">
+                                <MyFlights />
+                            </div>
+                            <div className="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
+                                <h2 className="dashboard-page__subheading">
+                                    Membership Status
+                                </h2>
+                            </div>
+                        </div>
+                    </Fragment>
+                );
+            } else return (<div>Unable to authenticate!</div>);
         }
+        return (
+            <div className="dashboard-page__centered">
+                <InlineLoading description="Redirecting to your identity provider..." />
+            </div>
+        );
     }
 };
-*/
-
 
 export default DashboardPage;
