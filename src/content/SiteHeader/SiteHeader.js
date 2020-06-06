@@ -52,7 +52,7 @@ class SiteHeader extends Component {
                         <UserAvatar20 onClick={this.handleClick.bind(this)} />
                     </HeaderGlobalAction>
                 </HeaderGlobalBar>
-                <HeaderPanel {...this.userPanelProps} style={{bottom: "75%"}} aria-label="User Avatar Panel">
+                <HeaderPanel {...this.userPanelProps} style={{bottom: "80%"}} aria-label="User Avatar Panel">
                     <UserPanel />
                 </HeaderPanel>
             </Header>

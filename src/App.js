@@ -22,7 +22,9 @@ class App extends Component {
     state = {
         auth: {
             keycloak: null,
-            authenticated: false
+            authenticated: false,
+            name: "hihi",
+            email: null
         },
         setAuth: this.setAuth
     };
