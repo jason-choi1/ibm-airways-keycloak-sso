@@ -39,4 +39,4 @@ Stops the app and kill the node process
 Jason Choi <jason.choi1@ibm.com>
 
 ## License
-This project is [Apache 2.0 licensed](./LICENSE).
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
