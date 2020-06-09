@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# IBM Airways
+A sample application developed with ReactJS and Carbon Design System components to demonstrate integration with and usage of Keycloak SSO.
+![IBM Airways LandingPage](https://github.com/jason-choi1/ibm-airways-keycloak-sso/blob/master/supplements/ibm_airways_landingpage.PNG)
+
+## Setup
+### Dependencies
+`npm install` to install all project dependencies
+
+### Create a Keycloak SSO Client
+Follow the [user guide](https://www.keycloak.org/docs/latest/server_admin/#_clients) to create a Keycloak SSO client. 
+At minimum, your client settings should resemble the following:
+![Keycloak SSO Client Config](https://github.com/jason-choi1/ibm-airways-keycloak-sso/blob/master/supplements/keycloak_sso_client_config.PNG)
+
+Set the desired authentication flow to be used with the client
+![Keycloak SSO Client Auth Flow](https://github.com/jason-choi1/ibm-airways-keycloak-sso/blob/master/supplements/keycloak_sso_client_auth_flow.PNG)
+
+Generate a keycloak.json file and place it into `<root_dir>/public/keycloak.json`
+![Keycloak SSO Client JSON](https://github.com/jason-choi1/ibm-airways-keycloak-sso/blob/master/supplements/keycloak_sso_client_oidc_json.PNG)
+
+Start the application 
+`npm start` and access on [http://localhost:3000](http://localhost:3000)
+
+## Testing Keycloak SSO
+"Sign in to your account" should redirect the user to the Keycloak SSO page that was configured
+![Keycloak SSO Login Page](https://github.com/jason-choi1/ibm-airways-keycloak-sso/blob/master/supplements/keycloak_sso_login_page.PNG)
 
 ## Available Scripts
-
-In the project directory, you can run:
-
 ### `npm start`
-
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm stop`
+Stops the app and kill the node process
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Point of Contact
+Jason Choi <jason.choi1@ibm.com>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+This project is [Apache 2.0 licensed](./LICENSE).
