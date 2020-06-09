@@ -3,17 +3,12 @@ import { useHistory } from "react-router-dom";
 import {
     Button,
     Switcher,
-    SwitcherItem,
-    SwitcherItemLink
+    SwitcherItem
 } from "carbon-components-react";
 import { UserContext } from "../UserContext";
 
 class UserPanel extends Component {
     
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <UserPanelContent />;
     }

@@ -3,13 +3,10 @@ import { InlineLoading } from "carbon-components-react";
 import Keycloak from 'keycloak-js';
 import { UserContext } from "../UserContext";
 import MyFlights from "./MyFlights";
+import StarReview32 from "@carbon/icons-react/lib/star--review/32";
 
 class DashboardPage extends Component {
     static contextType = UserContext;
-    
-    constructor(props) {
-        super(props);
-    }
     
     componentDidMount() {
         const context = this.context;
@@ -58,7 +55,7 @@ function DashboardPageContent() {
                         </div>
                         <div className="bx--col-md-4 bx--offset-lg-1 bx--col-lg-8">
                             <h2 className="dashboard-page__subheading">
-                                Membership Status
+                                Membership Status: <StarReview32 />Platinum
                             </h2>
                         </div>
                     </div>

@@ -1,19 +1,20 @@
 import React, { Component, Fragment } from "react";
 import {
-    Button,
     Dropdown,
     Form,
     FormGroup,
+    ModalWrapper,
     TextInput,
     TextArea
 } from "carbon-components-react";
 import { countryList } from "./Country";
 
-class ApplicationPage extends Component {
+const modalProps = {
+    size: "sm",
+    passiveModal: true
+}
 
-    constructor(props) {
-        super(props);
-    }
+class ApplicationPage extends Component {
 
     componentDidMount() {
 
@@ -82,7 +83,7 @@ class ApplicationPage extends Component {
                                     id="phone"
                                     invalidText="Invalid error message."
                                     labelText="Daytime Phone Number *"
-                                    placeholder="123-456-7890"
+                                    placeholder="+1234567890"
                                 />
                             </div>
                         </FormGroup>
@@ -111,13 +112,15 @@ class ApplicationPage extends Component {
                                 rows={10}
                             />
                         </FormGroup>
-                        <Button
-                            kind="primary"
-                            tabIndex={0}
-                            type="submit"
+                        <ModalWrapper
+                            {...modalProps}
+                            buttonTriggerText="Submit"
+                            modalHeading="Thank you for your interest"
+                            modalLabel="IBM Airways"
+                            onClick={() => this.props.history.push("/")}
                         >
-                            Submit
-                        </Button>
+                            <p>Thank you for your interest. A member of our team will be in contact with you within the next business day.</p>
+                        </ModalWrapper>
                     </Form>
                 </div>
             </Fragment>

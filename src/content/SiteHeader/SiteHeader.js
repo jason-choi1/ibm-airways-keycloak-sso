@@ -1,11 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Notification20 from "@carbon/icons-react/lib/notification/20";
 import UserAvatar20 from "@carbon/icons-react/lib/user--avatar/20";
 import {
     Header,
     HeaderName,
-    HeaderNavigation,
     HeaderMenuItem,
     HeaderGlobalBar,
     HeaderGlobalAction,
@@ -38,11 +37,8 @@ class SiteHeader extends Component {
                 <HeaderName element={Link} to="/" prefix="IBM">
                     Airways
                 </HeaderName>
-                <HeaderMenuItem element={Link} to="/repos">
-                    Repositories
-                </HeaderMenuItem>
                 <HeaderMenuItem element={Link} to="/dashboard">
-                    Dashboard
+                    My Dashboard
                 </HeaderMenuItem>
                 <HeaderGlobalBar>
                     <HeaderGlobalAction aria-label="Notifications">

@@ -3,7 +3,7 @@ export const UserContext = React.createContext({
     auth: {
         keycloak: null,
         authenticated: false,
-        user: "hihi",
+        user: null,
         email: null,
     },
     setAuth: () => {}
