@@ -36,7 +36,7 @@ You will also see any lint errors in the console.
 Stops the app and kill the node process
 
 ## Point of Contact
-Jason Choi <jason.choi1@ibm.com>
+Jason Choi: <jason.choi1@ibm.com>
 
 ## License
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
